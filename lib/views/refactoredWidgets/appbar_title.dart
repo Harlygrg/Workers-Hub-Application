@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 
 appbarTitle(){
   return  SizedBox(width: 60.w,

@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/splash_login_page&forot_p_w/login_page.dart';
 import 'package:workers_hub/views/splash_login_page&forot_p_w/pw_reset.dart';
 import 'package:workers_hub/views/user_screens/bottom_nav.dart';
 import 'package:workers_hub/views/user_screens/user_sign_up.dart';
 import 'package:workers_hub/views/worker_screens/bottom_nav_worker.dart';
-import 'package:workers_hub/views/worker_screens/worker_dashboard.dart';
 import 'package:workers_hub/views/worker_screens/worker_sign_up_page.dart';
 
 class LoginController extends GetxController{
+  // text editing controllers of login page
+  final mailController= TextEditingController();
+  final passwordController =TextEditingController();
+
 
 //login button colorchage,user or worker login
     bool isWorker = true;
@@ -30,6 +34,7 @@ class LoginController extends GetxController{
 
     loginClick(){
       if(isWorker==false){
+
         Get.to(()=>BottomNav());
       }
       else{

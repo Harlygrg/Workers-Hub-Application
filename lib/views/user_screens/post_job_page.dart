@@ -8,7 +8,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/User%20controllers/sign_up_controller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/user_screens/user_home_page.dart';
 import 'package:workers_hub/views/user_screens/user_sign_up.dart';
@@ -66,19 +66,19 @@ class PostJob extends StatelessWidget {
                           ),
 
                           divider4,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Contact Number",
                             icon:const Icon(
                               Icons.phone_outlined,
                             ),
                           ),
                           divider4,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Address",
                             icon: FaIcon(FontAwesomeIcons.addressCard),
                           ),
                           divider4,
-                       formRefact.signUpForm(
+                       formRefact.textFormField(
                                   hintText: "Job Location",
                                   icon:const Icon(
                                     Icons.place_outlined,
@@ -95,12 +95,12 @@ class PostJob extends StatelessWidget {
                             ],
                           ),
                           divider4,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Your requirements",
 
                           ),
                           divider4,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Budget",
 
                           ),
@@ -109,26 +109,26 @@ class PostJob extends StatelessWidget {
                     ),
                   ) ),
               divider4,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GetBuilder<SignUpController>(
-                      builder: (controller) {
-                        return Checkbox(
-                            value: signUpController.agreeTerms,
-                            onChanged: (value){
-                              signUpController.agreeTerms=value!;
-                              signUpController.update();
-                            }
-                        );
-                      }
-                  ),
-                  Text("Accept terms and conditions",
-                    style: TextStyle(
-                      fontSize: 14.sp,color: black54,
-                    ),),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //   children: [
+              //     GetBuilder<SignUpController>(
+              //         builder: (controller) {
+              //           return Checkbox(
+              //               value: signUpController.agreeTerms,
+              //               onChanged: (value){
+              //                 signUpController.agreeTerms=value!;
+              //                 signUpController.update();
+              //               }
+              //           );
+              //         }
+              //     ),
+              //     Text("Accept terms and conditions",
+              //       style: TextStyle(
+              //         fontSize: 14.sp,color: black54,
+              //       ),),
+              //   ],
+              // ),
               divider4,
               buttonRefact.submitButton(
 

@@ -8,7 +8,7 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/User%20controllers/home_page_body_and_bottom_nav.dart';
 import 'package:workers_hub/controllers/User%20controllers/workers_list_and_category_controller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,13 +41,13 @@ class UserHomePage extends StatelessWidget {
               children: [
 
                 SizedBox(
-                  width:rWidth(context)*.85,height: rHeight(context)*.829,
+                  width:85.w,height: 77.h,
                   child: ListView.builder(
                       itemCount: imgList.length,
                       itemBuilder: (BuildContext context, index){
 
                         return Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
+                          padding:  EdgeInsets.only(bottom: 1.5.h),
                           child: GestureDetector(
                             onTap: (){
                               Get.to(()=>WorkDetailPage());
@@ -71,7 +71,7 @@ class UserHomePage extends StatelessWidget {
                                         Text(nameList[index],
                                           style: TextStyle(color: black,
                                               fontWeight: FontWeight.bold,fontSize: 15.sp),),
-                                        divider1,
+                                        widget.divider(height: 1.h),
                                         widget.aboutWorker(text: "Place", icon:const Icon(
                                           Icons.location_on,
                                         ),),

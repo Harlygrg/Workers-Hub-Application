@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/change_password.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
@@ -53,27 +53,27 @@ class EditUserProfile extends StatelessWidget {
                       child: Column(
                         children: [
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                               hintText: "Full Name",
                               icon:FaIcon(FontAwesomeIcons.user)
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                               hintText: "Email",
                               icon:FaIcon(FontAwesomeIcons.envelope)
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                               hintText: "Contact Number",
                               icon:FaIcon(FontAwesomeIcons.phone)
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Address",
                             icon: FaIcon(FontAwesomeIcons.addressCard),
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Operational City",
                             icon: FaIcon(FontAwesomeIcons.landmark),
                           ),

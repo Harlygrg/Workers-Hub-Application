@@ -32,6 +32,7 @@ const  elect = "assetImages/electrician-removebg-preview.png";
 const  mason = "assetImages/mason-removebg-preview.png";
 const  maid = "assetImages/maid-removebg-preview.png";
 const  plumber = "assetImages/plumber-removebg-preview.png";
+const userRegApiUrl ="http://127.0.0.1:8000/api/";
 
 
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/login_contoller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 

@@ -4,7 +4,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/User%20controllers/workers_list_and_category_controller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 
 ButtonRefact button = ButtonRefact();

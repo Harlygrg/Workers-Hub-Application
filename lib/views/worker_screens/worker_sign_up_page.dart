@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/controllers/User%20controllers/sign_up_controller.dart';
+import 'package:workers_hub/controllers/text_editing_controllers.dart';
 import 'package:workers_hub/controllers/worker%20Conrollers/worker_signup_controller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/form_validation_validate_methods.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 import 'package:workers_hub/views/user_screens/end_drawer_home_page.dart';
+
+import '../../multi_select_dropdown.dart';
 class WorkerSignUp extends StatelessWidget {
    WorkerSignUp({Key? key}) : super(key: key);
   final ButtonRefact buttonRefact =ButtonRefact();
@@ -35,27 +39,52 @@ class WorkerSignUp extends StatelessWidget {
                           child: Column(
                             children: [
                               divider3,
-                              formRefact.signUpForm(
-                                  hintText: "Full Name",
+                              formRefact.textFormField(
+                                  hintText: "First Name",
+                                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                                  keyboardType: TextInputType.text,
+                                  controller: firstNameController,
+                                  validator: requiredValidator,
                                   icon:FaIcon(FontAwesomeIcons.user)
                               ),
                               divider3,
-                              formRefact.signUpForm(
-                                hintText: "Email",
-                                icon:FaIcon(FontAwesomeIcons.envelope)
+                              formRefact.textFormField(
+                                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                                  controller: lastNameController,
+                                  keyboardType: TextInputType.text,
+                                  validator: requiredValidator,
+                                  hintText: "Last Name",
+                                  icon:FaIcon(FontAwesomeIcons.user)
                               ),
                               divider3,
-                              formRefact.signUpForm(
+                              formRefact.textFormField(
+                                  keyboardType: TextInputType.emailAddress,
+                                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                                  controller: emailController,
+                                  validator: emailValidator,
+                                  hintText: "Email",
+                                  icon:FaIcon(FontAwesomeIcons.envelope)
+                              ),
+                              divider3,
+                              formRefact.textFormField(
+                                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                                  keyboardType: TextInputType.number,
+                                  validator: contactNumberValidator,
+
                                 hintText: "Contact Number",
                                 icon:FaIcon(FontAwesomeIcons.phone)
                               ),
                               divider3,
-                              formRefact.signUpForm(
+                              formRefact.textFormField(
+                                autovalidateMode: AutovalidateMode.onUserInteraction,
+                                controller: addressController,
+                                keyboardType: TextInputType.text,
+                                validator: requiredValidator,
                                 hintText: "Address",
                                 icon: FaIcon(FontAwesomeIcons.addressCard),
                               ),
                               divider3,
-                              formRefact.signUpForm(
+                              formRefact.textFormField(
                                 hintText: "Operational City",
                                 icon: FaIcon(FontAwesomeIcons.landmark),
                               ),
@@ -66,7 +95,9 @@ class WorkerSignUp extends StatelessWidget {
                                   button.elevatedButton(
                                       text: "Work Type", onPressed: ()=>showMultiSelect(context)),
                                   button.textButton(
-                                      onPressed: (){},
+                                      onPressed: (){
+                                          _signUpController.pickIdProof();
+                                      },
                                       text: "Upload Idproof",
                                       color: primeColor,
                                     fontSize: 12.sp,fontWeight: FontWeight.bold
@@ -75,7 +106,10 @@ class WorkerSignUp extends StatelessWidget {
                                 ],
                               ),
                               divider3,
-                              formRefact.signUpForm(
+                              formRefact.textFormField(
+                                autovalidateMode: AutovalidateMode.onUserInteraction,
+                                controller: descriptionController,
+                                validator: requiredValidator,
                                 hintText: "Short Description",
                               ),
                               divider3,
@@ -112,9 +146,13 @@ class WorkerSignUp extends StatelessWidget {
                                 ],
                               ),
                               divider3,
-                              formRefact.signUpForm(
+                              formRefact.textFormField(
                                 hintText: "Password",
-                                obscureText: _signUpController.showPW? false:true,
+                                autovalidateMode: AutovalidateMode.onUserInteraction,
+                                controller: passwordController,
+                                validator: passwordValidator,
+                                keyboardType: TextInputType.visiblePassword,
+                                obscuretext: _signUpController.showPW? false:true,
                                 icon:IconButton(
                                   onPressed: (){
                                     _signUpController.passwordShow();
@@ -124,8 +162,11 @@ class WorkerSignUp extends StatelessWidget {
                                 ),
                               ),
                               divider3,
-                              formRefact.signUpForm(
-                                obscureText: true,
+                              formRefact.textFormField(
+                                autovalidateMode: AutovalidateMode.onUserInteraction,
+                                controller: confirmPasswordController,
+                                  validator: confirmPasswordValildate,
+                                obscuretext: true,
                                 hintText: "Confirm Passoword",
                                 icon:FaIcon(FontAwesomeIcons.lock),
                               ),

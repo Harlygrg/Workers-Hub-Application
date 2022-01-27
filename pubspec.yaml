@@ -37,8 +37,10 @@ dependencies:
   get: ^4.6.1
 #  auto_size_text: ^3.0.0
   sizer: ^2.0.15
-  email_validator: ^2.0.1
   font_awesome_flutter: ^9.2.0
+  form_field_validator: ^1.1.0
+  http: ^0.13.4
+  file_picker: ^4.3.3
 
 dev_dependencies:
   flutter_test:

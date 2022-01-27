@@ -1,10 +1,11 @@
-import 'package:email_validator/email_validator.dart';
+
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/login_contoller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 
 
@@ -41,9 +42,7 @@ class ForgotPW extends StatelessWidget {
                         borderSide: BorderSide(color: primeColor)
                     )
                 ),
-                validator: (value){
-                  EmailValidator.validate(value!) ? null:  "please Enter a vaild email";
-                },
+                validator: EmailValidator(errorText: "Enter a valid Email address"),
               ),
             ),
             ),

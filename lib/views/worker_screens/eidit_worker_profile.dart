@@ -4,11 +4,12 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/worker%20Conrollers/worker_signup_controller.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 import 'package:workers_hub/views/user_screens/end_drawer_home_page.dart';
 
+import '../../multi_select_dropdown.dart';
 import '../change_password.dart';
 class EditWorkerProfile extends StatelessWidget {
   EditWorkerProfile({Key? key}) : super(key: key);
@@ -53,27 +54,27 @@ class EditWorkerProfile extends StatelessWidget {
                       child: Column(
                         children: [
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                               hintText: "Full Name",
                               icon:FaIcon(FontAwesomeIcons.user)
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                               hintText: "Email",
                               icon:FaIcon(FontAwesomeIcons.envelope)
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                               hintText: "Contact Number",
                               icon:FaIcon(FontAwesomeIcons.phone)
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Address",
                             icon: FaIcon(FontAwesomeIcons.addressCard),
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Operational City",
                             icon: FaIcon(FontAwesomeIcons.landmark),
                           ),
@@ -93,7 +94,7 @@ class EditWorkerProfile extends StatelessWidget {
                             ],
                           ),
                           divider3,
-                          formRefact.signUpForm(
+                          formRefact.textFormField(
                             hintText: "Short Description",
                           ),
                           divider3,

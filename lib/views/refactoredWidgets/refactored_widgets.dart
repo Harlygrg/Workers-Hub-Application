@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 
 rWidth(context)=>MediaQuery.of(context).size.width;
 rHeight(context) => MediaQuery.of(context).size.height;
@@ -48,27 +48,31 @@ aboutWorker({required String text,required Widget icon}){
 class FormFieldRefact{
 
   //login page text formfield
-  textFormField({required String hintText, Icon ?icon,}){
+  textFormField({
+    required String hintText,
+    Widget ?icon,
+    String? Function (String?)? validator,
+    TextEditingController? controller,
+    bool obscuretext =false,
+    AutovalidateMode? autovalidateMode,
+    TextInputType? keyboardType
+  }){
     return TextFormField(
       decoration: InputDecoration(
           hintText: hintText,
-          suffix: icon,
+          suffixIcon: icon,
           border:const UnderlineInputBorder(
-              borderSide: BorderSide(color: primeColor)
-          )
+              borderSide: BorderSide(color: primeColor),
+          ),
       ),
+      validator: validator,
+      controller: controller,
+      obscureText: obscuretext,
+      autovalidateMode:autovalidateMode ,
+      keyboardType: keyboardType,
     );
   }
-  // sign up page textformfields
-signUpForm({required String hintText, Widget ?icon,bool obscureText=false}){
-    return TextFormField(
-      obscureText:obscureText,
-      decoration: InputDecoration(
-        hintText: hintText,
-        suffixIcon: icon,
-      ),
-    );
-}
+
 
 }
 
@@ -83,7 +87,7 @@ class ButtonRefact {
           backgroundColor:  backgroundColor,
           side: BorderSide(width: 3,color: primeColor,),
           elevation: 5,
-          minimumSize: Size(100,50),
+          minimumSize: Size(15.w,6.h),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))
       ),
       onPressed: onTap,

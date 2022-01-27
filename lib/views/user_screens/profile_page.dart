@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/models/constants.dart';
+import 'package:workers_hub/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 import 'package:workers_hub/views/user_screens/edit_user_profile.dart';
 import 'package:workers_hub/views/user_screens/end_drawer_home_page.dart';
