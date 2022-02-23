@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 
 rWidth(context)=>MediaQuery.of(context).size.width;
 rHeight(context) => MediaQuery.of(context).size.height;

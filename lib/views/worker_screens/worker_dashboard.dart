@@ -6,7 +6,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/worker%20Conrollers/dashboard_controller.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 import 'package:workers_hub/views/user_screens/home_page_notification_bottom_sheet.dart';
 import 'package:workers_hub/views/worker_screens/eidt_work_details.dart';

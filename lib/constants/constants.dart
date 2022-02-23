@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
     //colors
     const Color primeColor = Color(0xff008080);
     const Color primeColorLight = Color(0xff00b3b3);
+    const Color lightTeal = Color(0xff00AEAE);
     const Color secColor = Color(0xff008B8B);
     const Color  thirdColor= Color(0xff00FFFF);
     const Color  white= Colors.white;
@@ -32,7 +33,12 @@ const  elect = "assetImages/electrician-removebg-preview.png";
 const  mason = "assetImages/mason-removebg-preview.png";
 const  maid = "assetImages/maid-removebg-preview.png";
 const  plumber = "assetImages/plumber-removebg-preview.png";
-const userRegApiUrl ="http://127.0.0.1:8000/api/";
+
+    const workerRegApiUrl ="http://3.94.59.123/emp/reg/";
+const workerRegApiUrl2 ="http://3.94.59.123/idemp/reg/";
+    const userRegApiUrl ="http://3.94.59.123/api/";
+    const userLoginUrl = "http://3.94.59.123/token/";
+
 
 
 

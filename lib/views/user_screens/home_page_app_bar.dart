@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/User%20controllers/workers_list_and_category_controller.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 
 import 'end_drawer_home_page.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
 import 'package:workers_hub/views/user_screens/end_drawer_home_page.dart';
 class WorkerNotificationDetails extends StatelessWidget {

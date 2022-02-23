@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:workers_hub/constants/constants.dart';
 
 //from stack overflow
 class MultiSelectDialogItem<V> {
@@ -34,6 +37,7 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
         _selectedValues.add(itemValue);
       } else {
         _selectedValues.remove(itemValue);
+
       }
     });
   }
@@ -43,7 +47,23 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   }
 
   void _onSubmitTap() {
-    Navigator.pop(context, _selectedValues);
+    if(_selectedValues.length<4){
+      Navigator.pop(context, _selectedValues);
+    }else{
+      showDialog(
+          context: context,
+          builder: (context){
+            return const AlertDialog(
+              title:  Text(
+                "Please choose less than 4 categories",
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: primeColor,fontSize: 13),),
+            );
+          }
+      );
+    }
+   
   }
 
   @override
@@ -83,23 +103,62 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   }
 }
 
+
+List<MultiSelectDialogItem<int>> multiItem =[];
+
+final valuesToPopulate={
+  1:"Plumber",
+  2:"Mason",
+  3:"Electrician",
+  4: "Carpenter"
+};
+
+void populateMultiselect(){
+  for(int v in valuesToPopulate.keys){
+    multiItem.add(MultiSelectDialogItem(v, valuesToPopulate[v]!));
+  }
+}
+
+
+
+
+
+
 void showMultiSelect(BuildContext context) async {
-  final items = <MultiSelectDialogItem<int>>[
-    MultiSelectDialogItem(1, 'Plumber'),
-    MultiSelectDialogItem(2, 'Mason'),
-    MultiSelectDialogItem(3, 'Electrician'),
-    MultiSelectDialogItem(3, 'Carpenter'),
-  ];
+  multiItem=[];
+  populateMultiselect();
+  final items =multiItem;
+  // final items = <MultiSelectDialogItem<int>>[
+  //   MultiSelectDialogItem(1, 'Plumber'),
+  //   MultiSelectDialogItem(2, 'Mason'),
+  //   MultiSelectDialogItem(3, 'Electrician'),
+  //   MultiSelectDialogItem(4, 'Carpenter'),
+  // ];
 
   final selectedValues = await showDialog<Set<int>>(
     context: context,
     builder: (BuildContext context) {
       return MultiSelectDialog(
         items: items,
-        initialSelectedValues: [1, 3].toSet(),
+        initialSelectedValues: [1].toSet(),
       );
     },
   );
-
+// SharedPreferences pref = await SharedPreferences.getInstance();
+// pref.setStringList("skillList", selectedValues);
   print(selectedValues);
+  getValuesFromKey(selectedValues!);
+
+}
+List<String> selectedSkills=[];
+void getValuesFromKey(Set selection)async{
+  print(valuesToPopulate);
+  if(selection!=null){
+    for(int v in selection.toList()){
+      selectedSkills.add(valuesToPopulate[v].toString());
+      //print(valuesToPopulate[v]);
+    }
+   // print(selectedValues);
+  }
+
 }

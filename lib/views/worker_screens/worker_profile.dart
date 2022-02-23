@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
+import 'package:workers_hub/views/splash_login_page&forot_p_w/login_page.dart';
 import 'package:workers_hub/views/user_screens/end_drawer_home_page.dart';
 import 'package:workers_hub/views/worker_screens/eidit_worker_profile.dart';
 import 'package:workers_hub/views/worker_screens/eidt_work_details.dart';
@@ -129,6 +131,12 @@ class WorkerProfile extends StatelessWidget {
               alignment: Alignment.center,
               child: button.submitButton(text: "Edit Profile", onPressed: (){
                 Get.to(()=>EditWorkerProfile());
+              }),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: button.iconButton(icon: FaIcon(FontAwesomeIcons.signOutAlt), onPressed: (){
+                Get.to(()=>LoginPage());
               }),
             )
           ],

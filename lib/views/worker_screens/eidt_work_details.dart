@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/worker%20Conrollers/dashboard_controller.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/appbar_title.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
-import '../../multi_select_dropdown.dart';
+import '../multi_select_dropdown.dart';
 
 class EditWorkDetails extends StatelessWidget {
    EditWorkDetails({Key? key}) : super(key: key);

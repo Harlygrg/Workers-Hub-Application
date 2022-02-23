@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:sizer/sizer.dart';
 import 'package:workers_hub/controllers/User%20controllers/workers_list_and_category_controller.dart';
-import 'package:workers_hub/constants.dart';
+import 'package:workers_hub/constants/constants.dart';
 import 'package:workers_hub/views/refactoredWidgets/refactored_widgets.dart';
+import 'package:workers_hub/views/worker_screens/worker_sign_up_page.dart';
 
 ButtonRefact button = ButtonRefact();
 WidgetRefact widget = WidgetRefact();
@@ -16,7 +18,7 @@ Widget homeDrawer(context){
 
     child: Container(
       height: rHeight(context),width: 70.w,
-      color: primeColor,
+      color: lightTeal,
       child: Column(
         children: [
           widget.divider(height: 20.w),
@@ -67,6 +69,18 @@ Widget homeDrawer(context){
               ),
             ],
           ),
+          widget.divider(height: 3.h),
+          button.loginButton(
+            buttonText: workerCatCntlr.workerRegnDone
+                ? "Login as Worker":"Register as a Worker",
+            textColor:  primeColor,
+            backgroundColor: white,
+            onTap:(){
+              print("--------wwww-------------${ workerCatCntlr.workerRegnDone}");
+               workerCatCntlr.registerAsWorkerOnTap();
+
+            },
+          )
         ],
       ),
     ),
