@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get_connect/http/src/multipart/multipart_file.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
@@ -64,7 +65,7 @@ class AuthenticationServieces {
    SharedPreferences pref = await SharedPreferences.getInstance();
    String? accessToken= pref.getString("accessToken");
    String? filePath = image!.path;
-   String? fileName = filePath.split('/').last;
+   String? fileName = filePath!.split('/').last;
     var body= {
       "city": city,
       "description": discription,
